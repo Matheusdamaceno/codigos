@@ -9,7 +9,7 @@ public class passageiro {
   String aux;
   Scanner sc = new Scanner(System.in);
 
-  public passageiro(String genero) {
+  passageiro(String genero) {
     this.genero = genero;
   }
 
