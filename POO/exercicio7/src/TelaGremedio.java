@@ -8,7 +8,8 @@ public class TelaGremedio {
     System.out.println("2- Apresentar remedio: ");
     System.out.println("0- sair");
     op = sc1.nextInt();
-    sc1.close();
+    sc1.nextLine();
+    /// sc1.close();
     return op;
   }
 }
