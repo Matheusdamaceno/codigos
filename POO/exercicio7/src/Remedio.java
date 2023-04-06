@@ -5,43 +5,44 @@ public class Remedio {
     private String posologia;
     private String nomeT;
 
-    public void setNome(String n) {
-        nome = n;
-    }
-
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
-    public void setPreco(float p) {
-        preco = p;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public float getPreco() {
-        return preco;
+        return this.preco;
     }
 
-    public void setDs(String d) {
-        ds = d;
+    public void setPreco(float preco) {
+        this.preco = preco;
     }
 
     public String getDs() {
-        return ds;
+        return this.ds;
     }
 
-    public void setPosologia(String psl) {
-        posologia = psl;
+    public void setDs(String ds) {
+        this.ds = ds;
     }
 
     public String getPosologia() {
-        return posologia;
+        return this.posologia;
     }
 
-    public void setNomeT(String nt) {
-        nomeT = nt;
+    public void setPosologia(String posologia) {
+        this.posologia = posologia;
     }
 
     public String getNomeT() {
-        return nomeT;
+        return this.nomeT;
     }
+
+    public void setNomeT(String nomeT) {
+        this.nomeT = nomeT;
+    }
+
 }
