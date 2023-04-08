@@ -8,10 +8,14 @@ public class menu {
       op = gtm.Gmenu();
       switch (op) {
         case 1:
-        gc.telaGCliente();
-        break;
+          System.out.println("---------------------------------------------------");
+          gc.telaGCliente();
+          System.out.println("---------------------------------------------------");
+          break;
         case 2:
-        gf.telaGFuncionario();
+          System.out.println("---------------------------------------------------");
+          gf.telaGFuncionario();
+          System.out.println("---------------------------------------------------");
           break;
         default:
           System.out.println("invalido");
