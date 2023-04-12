@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class gerenciaCliente {
   Scanner sc = new Scanner(System.in);
-  cliente c = new cliente();
+  private cliente c = new cliente();
   telaGenCliente tgc = new telaGenCliente();
   telaCliente tc = new telaCliente();
   int op;
