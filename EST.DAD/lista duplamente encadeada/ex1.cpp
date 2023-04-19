@@ -46,7 +46,7 @@ listaD *deslocaMaior(listaD *pRef)
 {
   listaD *aux = pRef->prox;
   listaD *maior = pRef;
-  while (pRef != NULL)
+  while (aux != NULL)
   {
     if (aux->valor > maior->valor)
     {
@@ -73,11 +73,63 @@ listaD *deslocaMaior(listaD *pRef)
       maior->ant->prox = maior->prox;
       maior->prox->ant = maior->ant;
     }
+    maior->prox = pRef;
+    pRef->ant = maior;
+    maior->ant = NULL;
+    return maior;
   }
   // o maior ja esta isolado
   // conectar com o primeiro
   // TERMINAR
 }
+
+listaD *removeLista(listaD *pRef, int info)
+{
+  listaD *aux = pRef;
+  if (aux == NULL)
+  {
+    return NULL;
+  }
+
+  while (aux != NULL && aux->valor != info)
+  {
+    aux = aux->prox;
+  }
+  // Condições:
+  // i) Se o elemento não esta na lista
+  // ii)Se o elemento é o primeiro
+  // iii)Se o elemento é o ultimo
+  // iv)Se esta no meio
+  if (aux == NULL)
+  {
+    return pRef;
+  }
+  if (aux == pRef)
+  {
+    // pRef guarda segundo elemento
+    pRef = aux->prox;
+    // Atualiza o segundo como novo primeiro
+    pRef->ant = NULL;
+    free(aux);
+    return pRef;
+  }
+  else
+  {
+    if (aux->prox == NULL)
+    {
+      aux->ant->prox = NULL;
+      free(aux);
+    }
+    else
+    {
+      aux->ant->prox = aux->prox;
+      aux->prox->ant = aux->ant;
+      free(aux);
+    }
+  }
+  return pRef;
+}
+
 void imprime(listaD *pRef)
 {
   while (pRef != NULL)
@@ -96,7 +148,11 @@ int main()
   L = insereIni(L, 30);
   L = insereIni(L, 50);
   L = insereFim(L, 70);
+  L = insereIni(L, 10);
   L = deslocaMaior(L);
+  imprime(L);
+  printf("\n");
+  L = removeLista(L, 30);
   imprime(L);
 
   return 0;
