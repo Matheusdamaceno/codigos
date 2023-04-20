@@ -13,6 +13,8 @@ listaD *insereIni(listaD *pRef, int info)
   aux->ant = NULL;
   aux->valor = info;
   aux->prox = pRef;
+  if (pRef != NULL)
+    pRef->ant = aux;
   return aux;
 }
 
