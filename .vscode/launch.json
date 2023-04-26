@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "ProjetoPokedex",
+      "request": "launch",
+      "mainClass": "ProjetoPokedex",
+      "projectName": "codigos_3df30aeb"
+    },
+    {
       "name": "C/C++: cpp.exe build and debug active file",
       "type": "cppdbg",
       "request": "launch",
