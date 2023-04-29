@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "codigos_3df30aeb"
+    },
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "src.App",
+      "projectName": "codigos_3df30aeb"
+    },
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "codigos_3df30aeb"
+    },
+    {
+      "type": "java",
       "name": "ProjetoPokedex",
       "request": "launch",
       "mainClass": "ProjetoPokedex",

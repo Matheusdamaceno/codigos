@@ -87,11 +87,11 @@ int main(int argc, char const *argv[])
   F->ini = NULL;
   F->fim = NULL;
 
-  insereFila(F, 1);
-  insereFila(F, 2);
-  insereFila(F, 3);
-  insereFila(F, 4);
-  insereFila(F, 5);
+  insereFila(F, 10);
+  insereFila(F, 20);
+  insereFila(F, 30);
+  insereFila(F, 40);
+  insereFila(F, 50);
   imprime(F);
   // removeFila(F);
   remove_pares(F);
