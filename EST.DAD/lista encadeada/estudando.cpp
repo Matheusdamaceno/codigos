@@ -144,6 +144,7 @@ lista *removePos(lista *pRef, int posi)
   int count = 1;
   lista *antAux = NULL;
   lista *aux = pRef;
+
   if (posi == 1)
   {
     antAux = aux->prox;
@@ -152,22 +153,19 @@ lista *removePos(lista *pRef, int posi)
   }
   else
   {
-    if (posi > count)
+    while (count != posi && aux != NULL)
+    {
+      antAux = aux;
+      aux = aux->prox;
+      count++;
+    }
+    if (aux == NULL)
     {
       return pRef;
     }
-    else
-    {
-      while (count != posi)
-      {
-        antAux = aux;
-        aux = aux->prox;
-        count++;
-      }
-      antAux->prox = aux->prox;
-      free(aux);
-      return pRef;
-    }
+    antAux->prox = aux->prox;
+    free(aux);
+    return pRef;
   }
 }
 
@@ -211,7 +209,7 @@ int main()
   // L = deslocamenor(L);
   imprime(L);
   printf("\n");
-  L = removePos(L, 8);
+  L = removePos(L, 6);
   // L = removeFim(L);
   // L = removeIni(L);
   // L = numeros_impares(L);
