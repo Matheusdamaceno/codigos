@@ -1,15 +1,12 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class menu {
-  Scanner sc = new Scanner(System.in);
-  int cont = 0;
-  ArrayList<lutador> l = new ArrayList<lutador>();
-  telaLutador tl = new telaLutador();
+  private ArrayList<lutador> l = new ArrayList<lutador>();
+  private telaLutador tl = new telaLutador();
+  private telaMenu tm = new telaMenu();
 
-  void exe() {
+  public void exe() {
     int op = 0;
-    telaMenu tm = new telaMenu();
     do {
       op = tm.tmenu();
       switch (op) {
@@ -23,40 +20,34 @@ public class menu {
           apresentar();
           break;
         case 4:
-          listar();
+          tl.listar(l);
           break;
         default:
+          System.out.println("invalido");
           break;
       }
     } while (op != 0);
   }
 
-  void criarLutador() {
-    if (cont <= 10) {
-      l.add(new lutador());
-      tl.setLutador(l.get(cont));
+  private void criarLutador() {
+    l.add(new lutador());
+    tl.setLutador(l.get(l.size() - 1));
+  }
+
+  private void alterarLutador() {
+    int pos = tm.selectLut();
+    if (l.get(pos) != null)
+      tl.setLutador(l.get(pos));
+    else
+      tm.msgLUTNExiste();
+  }
+
+  private void apresentar() {
+    int pos = tm.selectLut();
+    if (pos < l.size() && l.get(pos) != null) {
+      tl.apresentar(l.get(pos));
     } else {
-      tl.msgFull();
-    }
-  }
-
-  void alterarLutador() {
-    int opc = 0;
-    tl.msgEscolha();
-    opc = sc.nextInt();
-    tl.setLutador(l.get(opc));
-  }
-
-  void apresentar() {
-    int opc = 0;
-    tl.msgEscolha();
-    opc = sc.nextInt();
-    tl.apresentar(l.get(opc - 1));
-  }
-
-  void listar() {
-    for (int i = 0; i < l.size(); i++) {
-      tl.apresentar(l.get(i));
+      tm.msgLUTNExiste();
     }
   }
 }

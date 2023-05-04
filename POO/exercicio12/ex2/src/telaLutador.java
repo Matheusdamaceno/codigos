@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class telaLutador {
   Scanner sc = new Scanner(System.in);
@@ -23,15 +24,10 @@ public class telaLutador {
     System.out.println("Faixa: " + l.getFaixa());
   }
 
-  void msgFull() {
-    System.out.println("Banco de dados lotado!!");
-  }
-
-  void msgEscolha() {
-    System.out.println("Qual lutador?");
-  }
-
-  void msgNExiste() {
-    System.out.println("Não cadastrado!");
+  public void listar(ArrayList<lutador> l) {
+    for (int i = 0; i < l.size(); i++) {
+      System.out.println("\n--------------------------");
+      apresentar(l.get(i));
+    }
   }
 }

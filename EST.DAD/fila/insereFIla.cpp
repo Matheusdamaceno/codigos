@@ -56,7 +56,7 @@ void remove_pares(Fila *pfila)
   {
     info = pfila->ini->valor;
     removerFila(pfila);
-    if (info % 2 != 0)
+    if (info % 2 == 0)
       insereFila(tmp, info);
   }
   // esvazia a fila tmp

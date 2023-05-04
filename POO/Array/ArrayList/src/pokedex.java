@@ -51,15 +51,6 @@ public class pokedex {
 
   }
 
-  private int posVazia() {
-    for (int j = 0; j < lista.size(); j++) {
-      if (lista.get(j) == null)
-        return j;
-
-    }
-    return -1;
-  }
-
   private void alterarPokemon() {
     // pedir para o usuario, a posição do pokemon
     int pos = tpx.selectPokemon();

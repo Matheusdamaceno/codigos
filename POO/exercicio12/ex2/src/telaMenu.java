@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class telaMenu {
   Scanner sc = new Scanner(System.in);
 
-  int tmenu() {
+  public int tmenu() {
     int op = 0;
     System.out.println("-----------------------------------------");
     System.out.println("1 - Inserir novo lutador                |");
@@ -13,5 +13,19 @@ public class telaMenu {
     System.out.println("-----------------------------------------");
     op = sc.nextInt();
     return op;
+  }
+
+  public void msgListaCheia() {
+    System.out.println("A lista esta cheia!!");
+  }
+
+  public int selectLut() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("digite a posição do lutador (0 a 4):");
+    return sc.nextInt();
+  }
+
+  public void msgLUTNExiste() {
+    System.out.println("Este lutador n foi cadastrado!!");
   }
 }

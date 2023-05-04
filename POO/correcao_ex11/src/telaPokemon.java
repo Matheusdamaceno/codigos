@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class telaPokemon {
   Scanner sc = new Scanner(System.in);
@@ -25,12 +26,11 @@ public class telaPokemon {
     }
   }
 
-  public void listar(pokemon[] lista) {
-    for (int i = 0; i < lista.length; i++) {
+  public void listar(ArrayList<pokemon> p) {
+    for (int i = 0; i < p.size(); i++) {
       System.out.println("\n------------------------------------");
-      apresentar(lista[i]);
+      apresentar(p.get(i));
     }
   }
 
-  
 }
