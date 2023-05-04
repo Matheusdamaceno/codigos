@@ -22,7 +22,7 @@ public class pokedex {
           break;
         case 4:// listar
           // chamar o metodo listar
-          tp.listar(lista);
+          // tp.listar(lista);
           break;
         default:
           System.out.println("invalido");
