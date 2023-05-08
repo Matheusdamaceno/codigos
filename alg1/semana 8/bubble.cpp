@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 
   for (int i = 0; i < 5; i++)
   {
-    scanf("%d", &vet[i]);
+    scanf("%c", &vet[i]);
   }
 
   for (int i = 0; i < 5; i++)
@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 
   for (int i = 0; i < 5; i++)
   {
-    printf("%d ", vet[i]);
+    printf("%c ", vet[i]);
   }
 
   return 0;
