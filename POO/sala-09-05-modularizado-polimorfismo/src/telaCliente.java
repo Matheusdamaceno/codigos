@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class telaCliente {
+public class telaCliente extends telaPessoa {
   Scanner sc = new Scanner(System.in);
 
-  void lerDados(cliente c) {
+  public void lerDados(Pessoa x) {
+    cliente c = (cliente) x;
     System.out.println("---------------------------------------------------");
     System.out.println("Digite o nome do cliente: ");
     c.setNome(sc.nextLine());
@@ -13,11 +14,22 @@ public class telaCliente {
     c.setCodC(sc.nextInt());
   }
 
-  void apresentar(cliente c) {
+  public void apresentar(Pessoa x) {
+    cliente c = (cliente) x;
     System.out.println("---------------------------------------------------");
     System.out.println("Nome do cliente: " + c.getNome());
     System.out.println("Endereço do cliente: " + c.getEnd());
     System.out.println("Codigo: " + c.getCodC());
   }
 
+  public int menu() {
+    int op;
+
+    System.out.println("1 - Inserir dados de cliente");
+    System.out.println("2 - Apresentar dados de cliente");
+    System.out.println("0 - Sair");
+    op = sc.nextInt();
+    sc.nextLine();
+    return op;
+  }
 }

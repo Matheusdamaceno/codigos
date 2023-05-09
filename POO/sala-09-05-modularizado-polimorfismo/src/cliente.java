@@ -1,23 +1,5 @@
-public class cliente {
-  private String nome;
-  private String end;
+public class cliente extends Pessoa {
   private int codC;
-
-  public String getNome() {
-    return this.nome;
-  }
-
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
-  public String getEnd() {
-    return this.end;
-  }
-
-  public void setEnd(String end) {
-    this.end = end;
-  }
 
   public int getCodC() {
     return this.codC;

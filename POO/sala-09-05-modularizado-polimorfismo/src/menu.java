@@ -2,20 +2,19 @@
 public class menu {
   void geren() {
     telaGenMenu gtm = new telaGenMenu();
-    gerenciaCliente gc = new gerenciaCliente();
-    gerenciaFuncionario gf = new gerenciaFuncionario();
+    GerenciadorGenerico gg = new GerenciadorGenerico();
     int op;
     do {
       op = gtm.Gmenu();
       switch (op) {
         case 1:
           System.out.println("---------------------------------------------------");
-          gc.telaGCliente();
+          gg.gerenciar(op);
           System.out.println("---------------------------------------------------");
           break;
         case 2:
           System.out.println("---------------------------------------------------");
-          gf.telaGFuncionario();
+          gg.gerenciar(op);
           System.out.println("---------------------------------------------------");
           break;
         case 0:

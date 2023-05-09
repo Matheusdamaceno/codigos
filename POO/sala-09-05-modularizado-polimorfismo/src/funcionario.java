@@ -1,31 +1,13 @@
 
-public class funcionario {
-  private String nome;
-  private String end;
+public class funcionario extends Pessoa {
   private float salario;
 
-	public float getSalario() {
-		return this.salario;
-	}
-
-	public void setSalario(float salario) {
-		this.salario = salario;
-	}
-
-  public String getNome() {
-    return this.nome;
+  public float getSalario() {
+    return this.salario;
   }
 
-  public void setNome(String nome) {
-    this.nome = nome;
+  public void setSalario(float salario) {
+    this.salario = salario;
   }
 
-  public String getEnd() {
-    return this.end;
-  }
-
-  public void setEnd(String end) {
-    this.end = end;
-  }
-  
-  }
+}
