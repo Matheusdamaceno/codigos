@@ -50,18 +50,70 @@ list *insereFim_Rec(list *pRef, int info)
 
 int maior_Rec(list *pRef)
 {
-  int antAux;
-  int maior;
-  // lista vazia
+  int maior = 0;
+
   if (pRef == NULL)
-    return NULL;
-  // caso base
+  {
+    return 0;
+  }
+
+  // Caso base
   if (pRef->next == NULL)
   {
+    return pRef->data;
   }
   else
   {
-    // caso geral
+    // Caso geral
+    maior = maior_Rec(pRef->next);
+    if (maior < pRef->data)
+    {
+      return pRef->data;
+    }
+    else
+    {
+      return maior;
+    }
+  }
+}
+
+list *remove(list *pRef, int info)
+{
+  list *aux = pRef;
+  list *antAux = NULL;
+  if (aux == NULL)
+  {
+    return NULL;
+  }
+
+  if (pRef->data == info)
+  {
+    list *aux = pRef;
+    pRef = pRef->next;
+    free(aux);
+    return pRef;
+  }
+
+  if (aux != NULL && pRef->data != info)
+  {
+    // caso base
+    antAux = aux;
+    aux = aux->next;
+    if (aux->data == info)
+    {
+      antAux->next = aux->next;
+      free(aux);
+      return pRef;
+    }
+    else
+    {
+      pRef->next = remove(pRef->next, info);
+      return pRef;
+    }
+  }
+  else
+  {
+    return pRef;
   }
 }
 
@@ -74,6 +126,7 @@ int main(int argc, char const *argv[])
   L = insereIni(L, 20);
   L = insereIni(L, 10);
   L = insereFim_Rec(L, 50);
+  L = remove(L, 70);
   imprime(L);
 
   return 0;
