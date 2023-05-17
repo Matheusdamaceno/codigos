@@ -31,6 +31,21 @@ Arv *insereArv(Arv *raiz, int info)
   }
 }
 
+
+
+int contanos(Arv *raiz)
+{
+  int cont = 0;
+  if (raiz == NULL)
+    return 0;
+  else
+  {
+    cont += contanos(raiz->esq);
+    cont += contanos(raiz->dir);
+  }
+  return ++cont;
+}
+
 void pre_ordem(Arv *raiz)
 {
   if (raiz != NULL)
@@ -50,5 +65,6 @@ int main(int argc, char const *argv[])
   raiz = insereArv(raiz, 5);
   raiz = insereArv(raiz, 60);
   pre_ordem(raiz);
+  printf("%d", contanos(raiz));
   return 0;
 }
