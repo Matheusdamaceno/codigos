@@ -35,6 +35,19 @@ void pre_ordem(Arv *raiz)
   }
 }
 
+int contanos(Arv *raiz)
+{
+  int cont = 0;
+  if (raiz == NULL)
+    return 0;
+  else
+  {
+    cont += contanos(raiz->esq);
+    cont += contanos(raiz->dir);
+  }
+  return ++cont;
+}
+
 int main()
 {
   // codigo basico de arvore
@@ -50,5 +63,6 @@ int main()
   // Insere 35 a direita de 30
   raiz->dir->dir = criaFolha(35);
   pre_ordem(raiz);
+  printf("%d", contanos(raiz));
   return 0;
 }
