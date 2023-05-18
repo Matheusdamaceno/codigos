@@ -1,4 +1,5 @@
-public class empregado {
+// usando classe abstrata para ela não ser instanciada
+public abstract class empregado {
   private String nome;
   private float salario;
 

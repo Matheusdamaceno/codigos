@@ -48,7 +48,6 @@ public class pokedex {
     lista.add(new pokemon());
     tp.setPokemon(lista.get(lista.size() - 1));
     tpx.msgListaCheia();
-
   }
 
   private void alterarPokemon() {

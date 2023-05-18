@@ -49,14 +49,12 @@ public class pokedex {
     } else {
       tpx.msgListaCheia();
     }
-
   }
 
   private int posVazia() {
     for (int j = 0; j < lista.length; j++) {
       if (lista[j] == null)
         return j;
-
     }
     return -1;
   }
