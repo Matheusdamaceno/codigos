@@ -55,7 +55,7 @@ int altura(Arv *raiz)
   // Arvore nula
   if (raiz == NULL)
   {
-    return 0;
+    return -1;
   }
 
   int dir = altura(raiz->dir);
@@ -63,11 +63,11 @@ int altura(Arv *raiz)
 
   if (esq > dir)
   {
-    return esq;
+    return esq + 1;
   }
   else
   {
-    return dir;
+    return dir + 1;
   }
 }
 
@@ -85,6 +85,62 @@ int maior(Arv *raiz)
     }
     return maior(raiz->dir);
   }
+}
+
+Arv *remocao(Arv *raiz, int valor)
+{
+  if (raiz == NULL)
+  {
+    return NULL;
+  }
+  else
+  {
+
+    if (raiz->valor > valor)
+      raiz->esq = remocao(raiz->esq, valor);
+
+    else if (raiz->valor < valor)
+    {
+      raiz->dir = remocao(raiz->dir, valor);
+    }
+    else
+      // achou o elemento
+      // caso 1
+      if (raiz->esq == NULL && raiz->dir == NULL)
+      {
+        free(raiz);
+        raiz = NULL;
+      }
+      // caso 2
+      else if (raiz->esq == NULL)
+      {
+        Arv *aux = raiz->dir;
+        free(raiz);
+        raiz = aux;
+      }
+      else if (raiz->dir == NULL)
+      {
+        Arv *aux = raiz->esq;
+        free(raiz);
+        raiz = aux;
+      }
+      else
+      // caso 3
+      // achar o no que antecede a raiz na ordenação
+      {
+        Arv *aux = raiz->esq;
+        while (aux->dir != NULL)
+          aux = aux->dir;
+
+        // Efetuo a troca de valores
+        raiz->valor = aux->valor;
+        aux->valor = valor;
+
+        // volta para a recursao (caso 1 ou 2)
+        raiz->esq = remocao(raiz->esq, valor);
+      }
+  }
+  return raiz;
 }
 
 void pre_ordem(Arv *raiz)
@@ -109,6 +165,8 @@ int main(int argc, char const *argv[])
   pre_ordem(raiz);
   // printf("%d", contanos(raiz));
   // printf("%d", altura(raiz));
-  printf("%d", maior(raiz));
+  // printf("%d", maior(raiz));
+  raiz = remocao(raiz, 10);
+  pre_ordem(raiz);
   return 0;
 }
