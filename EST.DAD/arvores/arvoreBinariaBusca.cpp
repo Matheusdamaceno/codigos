@@ -143,6 +143,48 @@ Arv *remocao(Arv *raiz, int valor)
   return raiz;
 }
 
+int nivelNo(Arv *raiz, int valor)
+{
+  int count = 0;
+
+  if (raiz->valor != valor)
+  {
+    if (raiz->valor > valor)
+    {
+      count += nivelNo(raiz->esq, valor);
+      return 1 + count;
+    }
+    else
+    {
+      count += nivelNo(raiz->dir, valor);
+      return 1 + count;
+    }
+  }
+  return count;
+}
+
+int somaNivel(Arv *raiz, int nv)
+{
+  if (raiz == NULL)
+    return 0;
+
+  if (nv == 0)
+    return 1;
+
+  int countEsq = somaNivel(raiz->esq, nv - 1);
+  int countDir = somaNivel(raiz->dir, nv - 1);
+
+  int count = countEsq + countDir;
+
+  if (nv > 1)
+  {
+    count += somaNivel(raiz->esq, nv - 2);
+    count += somaNivel(raiz->dir, nv - 2);
+  }
+
+  return count;
+}
+
 void pre_ordem(Arv *raiz)
 {
   if (raiz != NULL)
@@ -166,7 +208,8 @@ int main(int argc, char const *argv[])
   // printf("%d", contanos(raiz));
   // printf("%d", altura(raiz));
   // printf("%d", maior(raiz));
-  raiz = remocao(raiz, 10);
-  pre_ordem(raiz);
+  // raiz = remocao(raiz, 10);
+  // pre_ordem(raiz);
+  printf("%d", somaNivel(raiz, 3));
   return 0;
 }
