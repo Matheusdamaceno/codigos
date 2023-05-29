@@ -210,6 +210,6 @@ int main(int argc, char const *argv[])
   // printf("%d", maior(raiz));
   // raiz = remocao(raiz, 10);
   // pre_ordem(raiz);
-  printf("%d", somaNivel(raiz, 3));
+  printf("%d", somaNivel(raiz, 1) + 1);
   return 0;
 }
