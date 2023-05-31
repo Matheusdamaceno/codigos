@@ -67,13 +67,34 @@ Arv *insereArv(Arv *raiz, int info) {
   }
 }
 
+int altura(Arv *raiz)
+{
+  // Arvore nula
+  if (raiz == NULL)
+  {
+    return -1;
+  }
 
-//Busca em Largura
+  int dir = altura(raiz->dir);
+  int esq = altura(raiz->esq);
+
+  if (esq > dir)
+  {
+    return esq + 1;
+  }
+  else
+  {
+    return dir + 1;
+  }
+}
+
+# //Busca em Largura
 void BFS(Arv* raiz, FILE* f){
     Arv* node = NULL;
     Fila* F = (Fila*) malloc(sizeof(Fila));
     F->ini = NULL;
     F->fim = NULL; 
+    fprintf(f,"%d\n", altura(raiz));
     insereFila(F, raiz);
 
     while (F->ini != NULL) {
@@ -97,6 +118,7 @@ void BFS(Arv* raiz, FILE* f){
         }       
     }      
 }
+
 
 int main() {
   FILE *fptr;
