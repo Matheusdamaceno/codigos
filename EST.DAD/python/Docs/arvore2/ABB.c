@@ -67,6 +67,8 @@ Arv *insereArv(Arv *raiz, int info) {
   }
 }
 
+
+//Busca em Largura
 void BFS(Arv* raiz, FILE* f){
     Arv* node = NULL;
     Fila* F = (Fila*) malloc(sizeof(Fila));
