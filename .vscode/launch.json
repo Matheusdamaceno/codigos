@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "app",
+      "request": "launch",
+      "mainClass": "app",
+      "projectName": "codigos_3df30aeb"
+    },
+    {
+      "type": "java",
       "name": "RecursoLegal",
       "request": "launch",
       "mainClass": "RecursoLegal",
