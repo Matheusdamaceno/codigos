@@ -1,0 +1,3 @@
+  Assuntos aprendidos na disciplina:
+
+metodo contrutor, sobrecarga e scanner, conceito de tela, encapsulamento, herança, vetor, arraylist, polimorfismo, interface, static, interface grafica.
