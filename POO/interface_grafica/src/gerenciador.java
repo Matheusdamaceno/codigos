@@ -20,10 +20,18 @@ public class gerenciador implements ActionListener {
   }
 
   public void actionPerformed(ActionEvent e) {
-    System.out.println("VAI TOMA NO CU PIRANHA");
     JButton botaoap = (JButton) e.getSource();
-    if (botaoap.getText().equals("cancelar")) {
+    String opc = botaoap.getName();
 
+    switch (opc) {
+      case "lancar":
+        System.out.println("VAI TOMA");
+        break;
+      case "nsei":
+        System.out.println("NO CU PIRANHA");
+        break;
+      default:
+        break;
     }
   }
 }

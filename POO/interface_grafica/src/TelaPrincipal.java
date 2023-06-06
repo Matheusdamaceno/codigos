@@ -38,11 +38,12 @@ public class TelaPrincipal extends JFrame {
         jbtFazAlgo = new JButton();
         jbtFazAlgo.setText("lancarrr");
         jbtFazAlgo.setBounds(300, 350, 150, 30);
+        jbtFazAlgo.setName("lancar");
 
         jbt = new JButton();
         jbt.setText("Faz algo");
         jbt.setBounds(100, 350, 150, 30);
-
+        jbt.setName("nsei");
         // adicionar cada componente ao jframe
         this.add(jlbNome);
         this.add(jtfNome);
