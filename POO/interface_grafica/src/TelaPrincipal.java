@@ -17,6 +17,22 @@ public class TelaPrincipal extends JFrame {
     private JTextField jtfNome;
     private JButton jbtFazAlgo;
     private JButton jbt;
+    private JLabel jlbCod;
+    private JTextField jtfCod;
+    private JLabel jlbEnd;
+    private JTextField jtfEnd;
+
+    public void setCliente(cliente c) {
+        jtfNome.setText(c.getNome());
+        jtfCod.setText(String.valueOf(c.getCod()));
+        jtfEnd.setText(c.getEnd());
+    }
+
+    public void getCliente(cliente c) {
+        c.setNome(jtfNome.getText());
+        c.setCod(Integer.parseInt(jtfCod.getText()));
+        c.setEnd(jtfEnd.getText());
+    }
 
     public TelaPrincipal() {
         this.setTitle("Finalmente! Mas faltei!");
@@ -32,7 +48,21 @@ public class TelaPrincipal extends JFrame {
 
         // instanciar e configurando o textfield
         jtfNome = new JTextField();
-        jtfNome.setBounds(110, 100, 200, 20);
+        jtfNome.setBounds(100, 100, 200, 20);
+
+        jlbCod = new JLabel();
+        jlbCod.setText("Codigo: ");
+        jlbCod.setBounds(50, 150, 50, 20);
+
+        jtfCod = new JTextField();
+        jtfCod.setBounds(100, 150, 200, 20);
+
+        jlbEnd = new JLabel();
+        jlbEnd.setText("Endereço: ");
+        jlbEnd.setBounds(50, 200, 200, 20);
+
+        jtfEnd = new JTextField();
+        jtfEnd.setBounds(100, 200, 200, 20);
 
         // instanciar e configurando o botao
         jbtFazAlgo = new JButton();
@@ -49,6 +79,10 @@ public class TelaPrincipal extends JFrame {
         this.add(jtfNome);
         this.add(jbtFazAlgo);
         this.add(jbt);
+        this.add(jlbCod);
+        this.add(jlbEnd);
+        this.add(jtfCod);
+        this.add(jtfEnd);
 
         // apresentar na tela
         this.setVisible(true);
