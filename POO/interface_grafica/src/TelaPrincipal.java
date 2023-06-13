@@ -28,10 +28,16 @@ public class TelaPrincipal extends JFrame {
         jtfEnd.setText(c.getEnd());
     }
 
-    public void getCliente(cliente c) {
+    public cliente getCliente() {
+        cliente c = new cliente();
         c.setNome(jtfNome.getText());
         c.setCod(Integer.parseInt(jtfCod.getText()));
         c.setEnd(jtfEnd.getText());
+        return c;
+    }
+
+    public int getCod() {
+        return Integer.parseInt(jtfCod.getText());
     }
 
     public TelaPrincipal() {
@@ -71,7 +77,7 @@ public class TelaPrincipal extends JFrame {
         jbtFazAlgo.setName("lancar");
 
         jbt = new JButton();
-        jbt.setText("Faz algo");
+        jbt.setText("cadastrar");
         jbt.setBounds(100, 350, 150, 30);
         jbt.setName("nsei");
         // adicionar cada componente ao jframe

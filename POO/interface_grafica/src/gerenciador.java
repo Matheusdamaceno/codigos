@@ -8,10 +8,12 @@ import javax.swing.JButton;
 public class gerenciador implements ActionListener {
   private TelaPrincipal tp;
   private cliente c;
+  private DAOcliente daoc;
 
   public gerenciador() {
     tp = new TelaPrincipal();
     c = new cliente();
+    daoc = new DAOcliente();
     // o botao é um referencia ao botao da tela
     // JButton botao = tp.jbtFazAlgo;
     // botao.addActionListener(this);
@@ -27,18 +29,23 @@ public class gerenciador implements ActionListener {
 
     switch (opc) {
       case "lancar":
-        System.out.println("VAI TOMA");
-        c.setNome("Dumbledore");
-        c.setCod(1);
-        c.setEnd("Rua n sei");
+        // System.out.println("VAI TOMA");
+        // c.setNome("Dumbledore");
+        // c.setCod(1);
+        // c.setEnd("Rua n sei");
+        // tp.setCliente(c);
+        int cod = tp.getCod();
+        c = daoc.getcliente(cod);
         tp.setCliente(c);
         break;
       case "nsei":
-        System.out.println("NO CU PIRANHA");
-        tp.getCliente(c);
-        System.out.println(c.getNome());
-        System.out.println(c.getCod());
-        System.out.println(c.getEnd());
+        // System.out.println("NO CU PIRANHA");
+        // tp.getCliente(c);
+        // System.out.println(c.getNome());
+        // System.out.println(c.getCod());
+        // System.out.println(c.getEnd());
+        c = tp.getCliente();
+        daoc.setcliente(c);
         break;
       default:
         break;
