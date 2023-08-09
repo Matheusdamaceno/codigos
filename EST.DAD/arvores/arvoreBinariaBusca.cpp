@@ -207,9 +207,9 @@ int main(int argc, char const *argv[])
   pre_ordem(raiz);
   // printf("%d", contanos(raiz));
   // printf("%d", altura(raiz));
-  // printf("%d", maior(raiz));
+  printf("O maior é %d", maior(raiz));
   // raiz = remocao(raiz, 10);
   // pre_ordem(raiz);
-  printf("%d", somaNivel(raiz, 1) + 1);
+  // printf("%d", somaNivel(raiz, 1) + 1);
   return 0;
 }
