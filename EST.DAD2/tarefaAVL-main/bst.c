@@ -202,26 +202,20 @@ link AVLinsertR(Tree t, link h, int item)
   }
   else
   {
-    // O elemento já existe, não faça nada.
     return h;
   }
 
-  // Atualize a altura do nó atual (h->N).
   h->N = 1 + max(altura(h->l), altura(h->r));
 
-  // Verifique o fator de equilíbrio do nó.
   int balance = fatorEquilibrio(h);
 
-  // Verifique se é necessário reequilibrar a árvore.
-  // Existem quatro casos possíveis: LL, LR, RR, RL.
-
-  // Caso LL: Rotação direita simples.
+  // Caso R: Rotação direita simples.
   if (balance > 1 && item < h->l->item)
   {
     return rotR(t, h);
   }
 
-  // Caso RR: Rotação esquerda simples.
+  // Caso L: Rotação esquerda simples.
   if (balance < -1 && item > h->r->item)
   {
     return rotL(t, h);
