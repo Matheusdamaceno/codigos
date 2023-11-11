@@ -1,3 +1,5 @@
+//Matheus Martins Damaceno 2475510 -- Leonardo dos Santos Correia 
+
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 40
