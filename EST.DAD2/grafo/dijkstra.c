@@ -1,3 +1,5 @@
+// Matheus Martins Damaceno 2475510 -- Leonardo dos Santos Correia
+
 #include <stdio.h>
 #define V 6
 #define INF 100
